@@ -1,25 +1,28 @@
 
 function Personaje(reina, rey) {
 
-    let Cleopatra={
+    const Cleopatra={
             name:"cleopatra",
             sirvienta:"Selene",
             couple:rey,
             origin:"Egipto"
     }
-    let MarcoAntonio={
+    const MarcoAntonio={
             name:"MarcoAntonio",
             couple:reina,
             origin:"Roma"
     }
-    reina.cleopatra = Cleopatra;
-    rey.marcoAntonio = MarcoAntonio;
+    return{
+    reina:Cleopatra,
+    rey:MarcoAntonio
+    };
+};  
 
-};
 function juego(){
-   alert (`vienvenidos\n .tienes que sal var la relacion de Cleopatra\n
+   alert (`                                       Vienvenidos\n 
+   Tienes que sal var la relacion de Cleopatra\n
    Cleopatra y Marco Antonio se encuentran enamorados en el antiguo Egipto.\n
-   Tú eres quien decide el destino de su amor.\n\n
+   Tú eres quien decide el destino de su amor.\n
    1. Convencer a Cleopatra de unirse a Marco Antonio.\n
    2. Aconsejar a Marco Antonio para que se una a Cleopatra.\n
    3. Separarlos y cambiar el curso de la historia.\n`);
@@ -47,10 +50,13 @@ function juego(){
      2.3 No hacer nada y esperar`);
      mudanza=prompt(`Que desicion tomaras?`,"1, 2 o 3");
     }
+
     if(feliz==2){
       delete Personaje.cleopatra.sirvienta
      }
+
    let enemistad;
+
     if(feliz==3){
      alert(`Cleopatra y Marco Antonio se vuelven enemigos.\n
      Existe un peligro de gerra entre imperios\n
@@ -87,28 +93,37 @@ function juego(){
      1.3 SE dividen estrategicamente planeando una emboscada`);
    option2=prompt(`Que desicion tomaras?`,"1, 2 o 3");
     }
-    let volverAjugar
+    //let volverAjugar;
     if(opcion==3){
      alert(`Marco Antonio pierde su nacionalidad 😢😥\n`);
      //volverAjugar=prompt("Quieres volver a jugar?","si o no")
      //volverAjugar();
    }
-  
-    if(opcion==3){
-        delete Personaje.MarcoAntonio.origin
-    }
-    if(option2==3){
-     alert ("cleopatra a muerto");
-   }
-   if(option2==3){
-     delete Personaje.reina
-   }
-   if (enemistad==1){
-    alert("Los dos pierden la vida por intrvencion de terceros");
-   }
-   if (enemistad==1){
-    delete Personaje()
-    }
+   switch(opcion,option2,enemistad) {
+    case 1:  
+      delete Personaje.MarcoAntonio.origin
+    break;
+
+    case 1:
+      alert("Los dos pierden la vida por intrvencion de terceros");
+    break;
+
+    case 1:
+      alert("Los dos pierden la vida por intrvencion de terceros");
+    break;
+
+    case 2:  
+    alert ("cleopatra a muerto");
+    break;
+
+    case 2:
+      delete Personaje.reina
+    break;
+
+    case 3:
+      delete Personaje.reina
+      break;
+  }
 };
   juego();
 
@@ -122,9 +137,8 @@ function juego(){
           break;
     };
   }*/
-   
-const cleopatraProperties = Object.keys(Personaje().egipcia);
-const marcoAntonioProperties = Object.keys(Personaje().romano);
+   let pareja=Personaje({name:' Cleopatra'},{name: ' Marco Antonio'});
+//const cleopatraProperties = Object.keys(Personaje().egipcia);
+//const marcoAntonioProperties = Object.keys(Personaje().romano);
 
-console.log("Propiedades de Cleopatra:",+ cleopatraProperties);
-console.log("Propiedades de Marco Antonio:",+ marcoAntonioProperties);
+console.log(pareja)
