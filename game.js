@@ -38,19 +38,30 @@ function juego(){
    1. Convencer a Cleopatra de unirse a Marco Antonio.\n
    2. Aconsejar a Marco Antonio para que se una a Cleopatra.\n
    3. Separarlos y cambiar el curso de la historia.\n`);
-   let option= prompt(`Que desicion tomaras?`,"1, 2 o 3");
+let option;
+  do {
+    option = prompt("Que decion tomaras? 1 2 o 3");
+    if (isNaN(option) || ![1, 2, 3].includes(Number(option))) {
+        alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+    }
+  } while (isNaN(option) || ![1, 2, 3].includes(Number(option)));
    
-   let feliz=option;
-   let opcion;
-   
-    if(feliz==1){
-     alert(`Juntos deciden mudarse a Alegandria\n
-           Se encuentran en problemas politicos ¿Como podemos ayudar?\n
-           1.1 Cleopatra renuncia su cargo y se muda a roma\n
-           1.2 Cleopatra y MarcoAntonio crean una alianza\n
-           1.3 Marco Antonio renuncia y se muda a Egipto`);
-        opcion=prompt(`Que desicion tomaras?`,"1, 2 o 3");
-    };
+  let feliz=option;
+
+  let opcion;
+   if(feliz==1){
+    alert(`Juntos deciden mudarse a Alegandria\n
+          Se encuentran en problemas politicos ¿Como podemos ayudar?\n
+          1.1 Cleopatra renuncia su cargo y se muda a roma\n
+          1.2 Cleopatra y MarcoAntonio crean una alianza\n
+          1.3 Marco Antonio renuncia y se muda a Egipto`);
+        do {
+           opcion = prompt("Que decion tomaras? 1 2 o 3");
+           if (isNaN(opcion) || ![1, 2, 3].includes(Number(opcion))) {
+               alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+           }
+        } while (isNaN(opcion) || ![1, 2, 3].includes(Number(opcion)));       
+  };
     
    let mudanza;
    
@@ -60,7 +71,12 @@ function juego(){
      2.1 Mandar a liquidar a Octavio en secreto\n
      2.2 Intentar una negociacion\n
      2.3 No hacer nada y esperar`);
-     mudanza=prompt(`Que desicion tomaras?`,"1, 2 o 3");
+     do {
+      mudanza = prompt("Que decion tomaras? 1 2 o 3");
+      if (isNaN(mudanza) || ![1, 2, 3].includes(Number(mudanza))) {
+          alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+      }
+     } while (isNaN(mudanza) || ![1, 2, 3].includes(Number(mudanza)));  
     }
 
     if(feliz==2){
@@ -69,14 +85,19 @@ function juego(){
 
    let enemistad;
 
-    if(feliz==3){
+  if(feliz==3){
      alert(`Cleopatra y Marco Antonio se vuelven enemigos.\n
      Existe un peligro de gerra entre imperios\n
      3.1 Cleopatra inicia la gerra\n
      3.2 MarcoAntonio inicia la gerra\n
      3.3 Marco Antonio y Cleopatra llegan a un acuerdo formando una alianza`);
-     enemistad=prompt(`Que desicion tomaras?`,"1, 2 o 3");
-    }
+     do {
+      enemistad = prompt("Que decion tomaras? 1 2 o 3");
+      if (isNaN(enemistad) || ![1, 2, 3].includes(Number(enemistad))) {
+          alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+        }
+      } while (isNaN(enemistad) || ![1, 2, 3].includes(Number(enemistad)));  
+  }
    
     //parte Dos
    
@@ -88,7 +109,12 @@ function juego(){
            1.1 Abandonar a Marco Antonio y recuperar Egipto\n
            1.2 Marco Antonio la assesina por desconfianza\n
            1.3 Cleopatra en decesperacion se alia con Octavio y atentan contra de Marco Antonio`);
-       option1=prompt(`Que desicion tomaras?`,"1, 2 o 3");
+        do {
+            option1 = prompt("Que decion tomaras? 1 2 o 3");
+            if (isNaN(option1) || ![1, 2, 3].includes(Number(option1))) {
+                alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+               }
+        } while (isNaN(option1) || ![1, 2, 3].includes(Number(option1)));   
     };
     switch(option1){
       case "1":
@@ -119,9 +145,14 @@ function juego(){
      1.1 Uyen a la capital de Egipto Alegandria\n
      1.2 Dirigen sus tropas al campo de batalla\n
      1.3 SE dividen estrategicamente planeando una emboscada`);
-   option2=prompt(`Que desicion tomaras?`,"1, 2 o 3");
-    }
-    //let volverAjugar;
+     do {
+      option2 = prompt("Que decion tomaras? 1 2 o 3");
+      if (isNaN(option2) || ![1, 2, 3].includes(Number(option2))) {
+          alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
+         }
+  } while (isNaN(option2) || ![1, 2, 3].includes(Number(option2)));   
+};
+
    switch(opcion) {
     case "1":  
       delete Personaje.MarcoAntonio.origin
