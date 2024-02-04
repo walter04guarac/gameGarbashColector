@@ -173,5 +173,16 @@ let option;
    let Couple=Character({name:' Cleopatra'},{name: ' Marco Antonio'});
 //const cleopatraProperties = Object.keys(Character().egipcia);
 //const marcoAntonioProperties = Object.keys(Character().romano);
+let characterJSON = JSON.stringify(Character({ name: ' Cleopatra\n'}, { name: ' Marco Antonio\n' }));
 
-console.log(Couple)
+// Obtén el elemento donde mostrarás la información
+let characterInfoElement = document.getElementById('characterInfo');
+
+// Crea un nuevo elemento <pre> para mostrar la información formateada
+let preElement = document.createElement('pre');
+preElement.textContent = characterJSON;
+
+// Agrega el elemento <pre> al elemento principal en el HTML
+characterInfoElement.appendChild(preElement);
+
+console.log(Couple);
