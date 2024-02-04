@@ -83,7 +83,7 @@ let option;
       delete Character.cleopatra.maid
      }
 
-   let enemistad;
+   let enmity;
 
   if(happy==3){
      alert(`Cleopatra y Marco Antonio se vuelven enemigos.\n
@@ -92,11 +92,11 @@ let option;
      3.2 MarcoAntonio inicia la gerra\n
      3.3 Marco Antonio y Cleopatra llegan a un acuerdo formando una alianza`);
      do {
-      enemistad = prompt("Que decion tomaras? 1 2 o 3");
-      if (isNaN(enemistad) || ![1, 2, 3].includes(Number(enemistad))) {
+      enmity = prompt("Que decion tomaras? 1 2 o 3");
+      if (isNaN(enmity) || ![1, 2, 3].includes(Number(enmity))) {
           alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
         }
-      } while (isNaN(enemistad) || ![1, 2, 3].includes(Number(enemistad)));  
+      } while (isNaN(enmity) || ![1, 2, 3].includes(Number(enmity)));  
   }
    
     //parte Dos
@@ -168,8 +168,8 @@ let option;
 };
   game();
 
-   let pareja=Character({name:' Cleopatra'},{name: ' Marco Antonio'});
+   let Couple=Character({name:' Cleopatra'},{name: ' Marco Antonio'});
 //const cleopatraProperties = Object.keys(Character().egipcia);
 //const marcoAntonioProperties = Object.keys(Character().romano);
 
-console.log(pareja)
+console.log(Couple)
