@@ -5,12 +5,24 @@ function Personaje(reina, rey) {
             name:"cleopatra",
             sirvienta:"Selene",
             couple:rey,
-            origin:"Egipto"
+            origines:{
+              origin:"Egipto",
+              mom:{
+                name:"Alicia",
+                husband:"Francisco"
+              }
+            }
     }
     const MarcoAntonio={
             name:"MarcoAntonio",
             couple:reina,
-            origin:"Roma"
+            origenes:{
+              origin:"Roma",
+              father:{
+                name:"Julio",
+                wife:"Anttonella"
+              }
+            }
     }
     return{
     reina:Cleopatra,
