@@ -1,10 +1,10 @@
 
-function Personaje(reina, rey) {
+function Character(queen, king) {
 
     const Cleopatra={
             name:"cleopatra",
-            sirvienta:"Selene",
-            couple:rey,
+            maid:"Selene",
+            couple:king,
             origines:{
               origin:"Egipto",
               mom:{
@@ -15,7 +15,7 @@ function Personaje(reina, rey) {
     }
     const MarcoAntonio={
             name:"MarcoAntonio",
-            couple:reina,
+            couple:queen,
             origenes:{
               origin:"Roma",
               father:{
@@ -25,12 +25,12 @@ function Personaje(reina, rey) {
             }
     }
     return{
-    reina:Cleopatra,
-    rey:MarcoAntonio
+    queen:Cleopatra,
+    king:MarcoAntonio
     };
 };  
 
-function juego(){
+function game(){
    alert (`                                       Vienvenidos\n 
    Tienes que sal var la relacion de Cleopatra\n
    Cleopatra y Marco Antonio se encuentran enamorados en el antiguo Egipto.\n
@@ -46,26 +46,26 @@ let option;
     }
   } while (isNaN(option) || ![1, 2, 3].includes(Number(option)));
    
-  let feliz=option;
+  let happy=option;
 
-  let opcion;
-   if(feliz==1){
+  let firstop;
+   if(happy==1){
     alert(`Juntos deciden mudarse a Alegandria\n
           Se encuentran en problemas politicos ¿Como podemos ayudar?\n
           1.1 Cleopatra renuncia su cargo y se muda a roma\n
           1.2 Cleopatra y MarcoAntonio crean una alianza\n
           1.3 Marco Antonio renuncia y se muda a Egipto`);
         do {
-           opcion = prompt("Que decion tomaras? 1 2 o 3");
-           if (isNaN(opcion) || ![1, 2, 3].includes(Number(opcion))) {
+           firstop = prompt("Que decion tomaras? 1 2 o 3");
+           if (isNaN(firstop) || ![1, 2, 3].includes(Number(firstop))) {
                alert("Por favor, ingrese una opción válida (1, 2 o 3) para la pregunta 1.");
            }
-        } while (isNaN(opcion) || ![1, 2, 3].includes(Number(opcion)));       
+        } while (isNaN(firstop) || ![1, 2, 3].includes(Number(firstop)));       
   };
     
    let mudanza;
    
-    if(feliz==2){
+    if(happy==2){
      alert(`Marco Antonio decide unirse a Cleopatra y juntos construyen un imperio.\n
      Hay problemas de diferencias politicas y aparece Octavio rival de la pareja\n
      2.1 Mandar a liquidar a Octavio en secreto\n
@@ -79,13 +79,13 @@ let option;
      } while (isNaN(mudanza) || ![1, 2, 3].includes(Number(mudanza)));  
     }
 
-    if(feliz==2){
-      delete Personaje.cleopatra.sirvienta
+    if(happy==2){
+      delete Character.cleopatra.maid
      }
 
    let enemistad;
 
-  if(feliz==3){
+  if(happy==3){
      alert(`Cleopatra y Marco Antonio se vuelven enemigos.\n
      Existe un peligro de gerra entre imperios\n
      3.1 Cleopatra inicia la gerra\n
@@ -103,7 +103,7 @@ let option;
    
    let option1;
    
-    if(opcion==1){
+    if(firstop==1){
      alert(`Cleopatra renuncia su cargo y se muda a roma\n
            Problemas de pareja Cleopatra anela el poder que perdio\n
            1.1 Abandonar a Marco Antonio y recuperar Egipto\n
@@ -118,28 +118,28 @@ let option;
     };
     switch(option1){
       case "1":
-        delete Personaje.Cleopatra.sirvienta
+        delete Character.Cleopatra.maid
       break;
       case "2":
         alert("Cleopatra es en contrada muerta \n");
        a= alert("quieres volver a jugar");
        if(a==true){
-        juego();
+        game();
        }
       break;
       case "3":
         alert("Marco Antinio muere y por desconfianza Octavio tambien asesina a Cleopatra");
-        delete Personaje;
+        delete Character;
         a= alert("quieres volver a jugar");
        if(a==true){
-        juego();
+        game();
        }
       break;
     }
    
    let option2;
    
-    if(opcion==2){
+    if(firstop==2){
      alert(`Marco Antonio decide unirse a Cleopatra y juntos construyen un imperio\n
      Situacion Octavio lleno de ira empieza una gerra cotra del imperio Romano y Egipcio\n
      1.1 Uyen a la capital de Egipto Alegandria\n
@@ -153,33 +153,23 @@ let option;
   } while (isNaN(option2) || ![1, 2, 3].includes(Number(option2)));   
 };
 
-   switch(opcion) {
+   switch(firstop) {
     case "1":  
-      delete Personaje.MarcoAntonio.origin
+      delete Character.MarcoAntonio.origin
     break;
     case "2":
       alert("Cleopatra a muerto")
-      delete Personaje.reina
+      delete Character.queen
     break;
     case "3":
       alert(`Marco Antonio pierde su nacionalidad 😢😥\n`);
       break;
   }
 };
-  juego();
+  game();
 
-  /*function ejecutarOpcion(volverAjugar) {
-      switch (volverAjugar) {
-        case 1:
-         juego();
-          break;
-          case 2:
-            alert("vuelve pronto");
-          break;
-    };
-  }*/
-   let pareja=Personaje({name:' Cleopatra'},{name: ' Marco Antonio'});
-//const cleopatraProperties = Object.keys(Personaje().egipcia);
-//const marcoAntonioProperties = Object.keys(Personaje().romano);
+   let pareja=Character({name:' Cleopatra'},{name: ' Marco Antonio'});
+//const cleopatraProperties = Object.keys(Character().egipcia);
+//const marcoAntonioProperties = Object.keys(Character().romano);
 
 console.log(pareja)
