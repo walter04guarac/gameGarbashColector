@@ -90,9 +90,25 @@ function juego(){
            1.3 Cleopatra en decesperacion se alia con Octavio y atentan contra de Marco Antonio`);
        option1=prompt(`Que desicion tomaras?`,"1, 2 o 3");
     };
-   
-    if(opcion==1){
-     delete Personaje.cleopatra.sirvienta;
+    switch(option1){
+      case "1":
+        delete Personaje.Cleopatra.sirvienta
+      break;
+      case "2":
+        alert("Cleopatra es en contrada muerta \n");
+       a= alert("quieres volver a jugar");
+       if(a==true){
+        juego();
+       }
+      break;
+      case "3":
+        alert("Marco Antinio muere y por desconfianza Octavio tambien asesina a Cleopatra");
+        delete Personaje;
+        a= alert("quieres volver a jugar");
+       if(a==true){
+        juego();
+       }
+      break;
     }
    
    let option2;
@@ -106,34 +122,16 @@ function juego(){
    option2=prompt(`Que desicion tomaras?`,"1, 2 o 3");
     }
     //let volverAjugar;
-    if(opcion==3){
-     alert(`Marco Antonio pierde su nacionalidad 😢😥\n`);
-     //volverAjugar=prompt("Quieres volver a jugar?","si o no")
-     //volverAjugar();
-   }
-   switch(opcion,option2,enemistad) {
-    case 1:  
+   switch(opcion) {
+    case "1":  
       delete Personaje.MarcoAntonio.origin
     break;
-
-    case 1:
-      alert("Los dos pierden la vida por intrvencion de terceros");
-    break;
-
-    case 1:
-      alert("Los dos pierden la vida por intrvencion de terceros");
-    break;
-
-    case 2:  
-    alert ("cleopatra a muerto");
-    break;
-
-    case 2:
+    case "2":
+      alert("Cleopatra a muerto")
       delete Personaje.reina
     break;
-
-    case 3:
-      delete Personaje.reina
+    case "3":
+      alert(`Marco Antonio pierde su nacionalidad 😢😥\n`);
       break;
   }
 };
