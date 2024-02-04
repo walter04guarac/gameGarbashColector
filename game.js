@@ -78,10 +78,12 @@ let option;
       }
      } while (isNaN(mudanza) || ![1, 2, 3].includes(Number(mudanza)));  
     }
-
-    if(happy==2){
-      delete Character.cleopatra.maid
-     }
+  switch (happy){
+    case "2":
+      alert('nunca conocio a su empleada');
+      delete Character.cleopatra.maid;
+    break;
+  }
 
    let enmity;
 
@@ -129,7 +131,7 @@ let option;
       break;
       case "3":
         alert("Marco Antinio muere y por desconfianza Octavio tambien asesina a Cleopatra");
-        delete Character;
+        delete Couple;
         a= alert("quieres volver a jugar");
        if(a==true){
         game();
